@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do Cliente - Never Lose</title>
+    <link rel="icon" href="FOTOS/Imagem do WhatsApp de 2025-04-21 à(s) 14.47.04_528fedd6.png" type="image/png">
+    <style>
+        /* Estilização geral */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111; /* Fundo escuro */
+            color: #fff; /* Cor do texto */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        header {
+            background-image: url("FOTOS/tigre fundo nl.jpg");/* Fundo escuro */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        header .slogan {
+            font-size: 18px;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        section.compra {
+            background-color: #1a1a1a; /* Fundo escuro para a seção */
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ao redor */
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        section.compra h2 {
+            text-align: center;
+            color: #ffc700; /* Amarelo */
+            margin-bottom: 20px;
+        }
+
+        form.buyer-info h3 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        form.buyer-info label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        form.buyer-info input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #222; /* Fundo escuro para os campos */
+            color: #fff; /* Texto branco */
+        }
+
+        form.buyer-info button {
+            background-color: #ffc700; /* Amarelo */
+            color: #000; /* Texto preto */
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        form.buyer-info button:hover {
+            background-color: #e6b800; /* Amarelo mais escuro ao passar o mouse */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000; /* Fundo preto */
+            color: #666; /* Texto cinza claro */
+            font-size: 14px;
+            margin-top: 40px;
+            border-top: 1px solid #333; /* Linha superior no rodapé */
+        }
+    </style>
+    <script>
+        function salvarDadosCliente(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            // Captura os valores dos campos
+            const nome = document.getElementById('nome').value.trim();
+            const endereco = document.getElementById('endereco').value.trim();
+            const cidade = document.getElementById('cidade').value.trim();
+            const estado = document.getElementById('estado').value.trim();
+            const cep = document.getElementById('cep').value.trim();
+            const telefone = document.getElementById('telefone').value.trim();
+
+            // Salva os dados no LocalStorage
+            localStorage.setItem('nome', nome);
+            localStorage.setItem('endereco', endereco);
+            localStorage.setItem('cidade', cidade);
+            localStorage.setItem('estado', estado);
+            localStorage.setItem('cep', cep);
+            localStorage.setItem('telefone', telefone);
+
+            // Redireciona para a página de pagamento
+            window.location.href = 'pagamento.html';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>NEVER LOSE</h1>
+            <p class="slogan">Nunca se renda. Nunca recue. NEVER LOSE.</p>
+        </div>
+    </header>
+
+    <section class="compra">
+        <div class="container">
+            <h2>Dados do Cliente</h2>
+            <form onsubmit="salvarDadosCliente(event)" class="buyer-info">
+                <h3>Informações do Cliente e Endereço</h3>
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereço completo" required>
+
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required>
+
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado" placeholder="Digite seu estado (ex: SP)" required>
+
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" placeholder="Digite seu CEP (ex: 00000-000)" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="telefone" placeholder="Digite seu telefone (somente números)" required>
+
+                <button type="submit">Continuar para Pagamento</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Never Lose. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

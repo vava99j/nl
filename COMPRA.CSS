@@ -1,0 +1,106 @@
+/* Estilização geral */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte padrão */
+    background-color: #f4f4f4; /* Define a cor de fundo da página */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove padding padrão */
+    color: #333; /* Define a cor padrão do texto */
+}
+
+/* Cabeçalho */
+header {
+    background-image: url("FOTOS/tigre fundo nl.jpg");/* Fundo escuro para o cabeçalho */
+    color: #fff; /* Cor do texto no cabeçalho */
+    padding: 20px 0; /* Espaçamento interno no topo e embaixo */
+    text-align: center; /* Centraliza o conteúdo do cabeçalho */
+}
+
+header .navbar {
+    display: flex; /* Exibe os itens da barra de navegação em linha */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 20px; /* Espaçamento entre os links */
+    margin-bottom: 20px; /* Espaçamento abaixo da barra de navegação */
+}
+
+header .navbar a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: #fff; /* Define a cor do texto dos links */
+    font-weight: bold; /* Deixa o texto dos links em negrito */
+    padding: 10px 20px; /* Adiciona espaçamento interno nos links */
+    border-radius: 5px; /* Bordas arredondadas nos links */
+    transition: background 0.3s; /* Adiciona uma transição suave ao fundo */
+}
+
+header .navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo semitransparente ao passar o mouse */
+}
+
+header .header-content h1 {
+    font-size: 36px; /* Tamanho da fonte do título principal */
+    margin: 10px 0; /* Espaçamento acima e abaixo do título */
+}
+
+header .header-content .slogan {
+    font-size: 18px; /* Tamanho da fonte do slogan */
+    font-style: italic; /* Deixa o slogan em itálico */
+}
+
+/* Seção de cadastro */
+.cadastro-produto {
+    padding: 40px 20px; /* Espaçamento interno da seção */
+    background-color: #fff; /* Fundo branco para o formulário */
+    border-radius: 10px; /* Bordas arredondadas na seção */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve ao redor da seção */
+    max-width: 600px; /* Largura máxima da seção */
+    margin: 40px auto; /* Centraliza a seção horizontalmente e adiciona espaçamento vertical */
+}
+
+.cadastro-produto h2 {
+    text-align: center; /* Centraliza o título da seção */
+    color: #1a1a1a; /* Cor do título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+.cadastro-produto form label {
+    display: block; /* Faz os rótulos ocuparem toda a largura */
+    font-weight: bold; /* Deixa os rótulos em negrito */
+    margin-bottom: 5px; /* Espaçamento abaixo dos rótulos */
+    color: #333; /* Cor do texto dos rótulos */
+}
+
+.cadastro-produto form input,
+.cadastro-produto form textarea,
+.cadastro-produto form button {
+    width: 100%; /* Faz os campos ocuparem toda a largura disponível */
+    padding: 10px; /* Espaçamento interno nos campos */
+    margin-bottom: 20px; /* Espaçamento abaixo dos campos */
+    border: 1px solid #ccc; /* Borda cinza clara nos campos */
+    border-radius: 5px; /* Bordas arredondadas nos campos */
+    font-size: 16px; /* Tamanho da fonte nos campos */
+}
+
+.cadastro-produto form textarea {
+    resize: vertical; /* Permite redimensionar o campo de texto apenas verticalmente */
+    min-height: 100px; /* Altura mínima para o campo de texto */
+}
+
+.cadastro-produto form button {
+    background-color: #1a1a1a; /* Fundo escuro para o botão */
+    color: #fff; /* Cor do texto do botão */
+    font-weight: bold; /* Deixa o texto do botão em negrito */
+    cursor: pointer; /* Mostra o cursor de "mão" ao passar sobre o botão */
+    transition: background 0.3s; /* Adiciona uma transição suave ao fundo */
+}
+
+.cadastro-produto form button:hover {
+    background-color: #333; /* Fundo mais claro ao passar o mouse sobre o botão */
+}
+
+/* Rodapé */
+footer {
+    text-align: center; /* Centraliza o texto do rodapé */
+    padding: 20px; /* Espaçamento interno no rodapé */
+    background-color: #1a1a1a; /* Fundo escuro para o rodapé */
+    color: #fff; /* Cor do texto no rodapé */
+    margin-top: 40px; /* Espaçamento acima do rodapé */
+}

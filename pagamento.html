@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - Never Lose</title>
+    <link rel="stylesheet" href="COMPRA.CSS">
+    <link rel="icon" href="FOTOS/Imagem do WhatsApp de 2025-04-21 à(s) 14.47.04_528fedd6.png" type="image/png" />
+    <script>
+        function exibirDadosCliente() {
+            // Recupera os dados do LocalStorage
+            const nome = localStorage.getItem('nome') || 'Não informado';
+            const endereco = localStorage.getItem('endereco') || 'Não informado';
+            const cidade = localStorage.getItem('cidade') || 'Não informado';
+            const estado = localStorage.getItem('estado') || 'Não informado';
+            const cep = localStorage.getItem('cep') || 'Não informado';
+            const telefone = localStorage.getItem('telefone') || 'Não informado';
+
+            // Exibe os dados na página
+            document.getElementById('dados-cliente').innerHTML = `
+                <p><strong>Nome:</strong> ${nome}</p>
+                <p><strong>Endereço:</strong> ${endereco}</p>
+                <p><strong>Cidade:</strong> ${cidade}</p>
+                <p><strong>Estado:</strong> ${estado}</p>
+                <p><strong>CEP:</strong> ${cep}</p>
+                <p><strong>Telefone:</strong> ${telefone}</p>
+            `;
+        }
+
+        // Chama a função ao carregar a página
+        window.onload = exibirDadosCliente;
+    </script>
+    <style>
+        /* Estilização geral */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111; /* Fundo escuro */
+            color: #fff; /* Cor do texto */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        header {
+            background-color: #1a1a1a; /* Fundo escuro */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        header .slogan {
+            font-size: 18px;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        section.compra {
+            background-color: #1a1a1a; /* Fundo escuro para a seção */
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ao redor */
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        section.compra h2 {
+            text-align: center;
+            color: #ffc700; /* Amarelo */
+            margin-bottom: 20px;
+        }
+
+        .dados-cliente {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .dados-cliente h3 {
+            color: #ffc700;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .dados-cliente p {
+            font-size: 16px;
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+
+        .dados-cliente p strong {
+            color: #ffc700;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+            gap: 20px; /* Espaçamento entre os itens */
+            margin-top: 30px;
+        }
+
+        .payment-option {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .payment-option h3 {
+            color: #ffc700;
+            margin-bottom: 15px;
+        }
+
+        .payment-option img {
+            max-width: 100%;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        .payment-option p {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000; /* Fundo preto */
+            color: #666; /* Texto cinza claro */
+            font-size: 14px;
+            margin-top: 40px;
+            border-top: 1px solid #333; /* Linha superior no rodapé */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>NEVER LOSE</h1>
+            <p class="slogan">Nunca se renda, Nunca recue, NEVER LOSE.</p>
+        </div>
+    </header>
+
+    <section class="compra">
+        <div class="container">
+            <h2>Verifique as Informações</h2>
+
+            <!-- Exibição dos dados do cliente -->
+            <div id="dados-cliente" class="dados-cliente">
+                <h3>Dados do Cliente</h3>
+                <!-- Os dados serão preenchidos dinamicamente pelo JavaScript -->
+            </div>
+
+            <!-- Grade de pagamento -->
+            <div class="payment-grid">
+                <!-- Pagamento via Pix -->
+                <div class="payment-option">
+                    <h3>Pagamento via Pix</h3>
+                    <p>Escaneie o QR Code abaixo com o aplicativo do seu banco:</p>
+                    <img src="FOTOS/Imagem do WhatsApp de 2025-04-21 à(s) 02.41.12_29de3e1b.jpg" alt="QR Code para pagamento via Pix" width="200">
+                    <p>Chave Pix: <strong>svagnerjorge2@gmail.com</strong></p>
+                </div>
+
+                <!-- Pagamento via PayPal -->
+                <div class="payment-option">
+                    <h3>Pagamento via PayPal</h3>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="SEU_HOSTED_BUTTON_ID_AQUI">
+                        <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - A maneira mais segura e fácil de fazer pagamentos online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Never Lose. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
